@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.task-card.completed {
+    background-color: #f2f2f2;
+}
+
+.task-card input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.task-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.task-form input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.task-form button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.checkbox-container {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.checkbox-container input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #3498db;
+    border-radius: 3px;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark {
+    background-color: #3498db;
+    border: 2px solid #3498db;
+    color: #fff;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark:after {
+    display: block;
+    left: 7px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.task-title {
+    flex: 1;
+    font-size: 16px;
+    color: #333;
+}
+
+.completed .task-title {
+    text-decoration: line-through;
+    color: #999;
+}
+
+.button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+.logout-button {
+    text-align: right;
+    margin-top: 30px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.logout-button .button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.logout-button .button:hover {
+    background-color: #c0392b;
+}
