@@ -23,6 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');;
     Route::post('/tasks', [TaskController::class, 'store']);
     Route::put('/tasks/{id}', [TaskController::class, 'update']);
+    Route::put('/updateTitle/{id}', [TaskController::class, 'updateTitle']);
     Route::delete('/tasks/{id}', [TaskController::class, 'destroy']);
 });
 

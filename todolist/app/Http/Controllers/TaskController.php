@@ -41,6 +41,26 @@ class TaskController extends Controller
         return redirect('/tasks');
     }
 
+    public function updateTitle(Request $request, $id)
+    {
+        $task = Task::findOrFail($id);
+
+        if ($task->user_id !== auth()->id()) {
+            abort(403);
+        }
+
+        $request->validate([
+            'new_title' => 'required|max:255',
+        ]);
+
+        $newTitle = $request->input('new_title');
+        $task->title = $newTitle;
+
+        $task->save();
+
+        return response()->json(['message' => 'Success', 'new_title' => $newTitle]);
+    }
+
     public function destroy($id)
     {
         $task = Task::findOrFail($id);
